@@ -10,4 +10,21 @@ async function getLessons () {
     }
 }
 
-module.exports = {getLessons}
+
+async function postLessons (lessonObj) {
+    try {
+        const data = await fetch(`${url}/lessons`, {
+            method: "POST", 
+            headers: {
+                "Content-Type": "application/json", 
+            }, 
+            body: JSON.stringify(lessonObj)
+        }); 
+        const response = await data.json(); 
+        return response; 
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+module.exports = {getLessons, postLessons}

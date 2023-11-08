@@ -32,7 +32,10 @@ const lessonSchema = new Schema({
         enum: ['Beginner', 'Intermediate', 'Advanced'], 
         required: true 
         }, 
-    date: Date, 
+    date: {
+        type: Date, 
+        required: true 
+    }, 
     status: { 
         type: String,
         default: 'PENDING'
