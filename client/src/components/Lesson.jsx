@@ -1,5 +1,6 @@
 import moment from "moment"; 
 import { acceptLesson, rejectLesson } from "../apiService";
+import sortLessons from "../utils/sortLessons";
 
 const Lesson = ( {lesson, setLessons} ) => {
   
@@ -8,7 +9,7 @@ const Lesson = ( {lesson, setLessons} ) => {
     acceptLesson(lesson._id).then((updatedLesson) => {
       setLessons(prev => {
         const filteredLessons = prev.filter(el => el._id !== lesson._id);
-        return [...filteredLessons, updatedLesson];
+        return sortLessons([...filteredLessons, updatedLesson]);
       })
   })
 }
@@ -18,7 +19,7 @@ function handleReject () {
   rejectLesson(lesson._id).then((updatedLesson) => {
     setLessons(prev => {
       const filteredLessons = prev.filter(el => el._id !== lesson._id);
-      return [...filteredLessons, updatedLesson];
+      return sortLessons([...filteredLessons, updatedLesson]);
     })
 })
 }
