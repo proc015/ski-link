@@ -5,7 +5,7 @@ const LessonList = ({ lessons, setLessons }) => {
     <div className="lesson-list">
       {lessons.length ? (
         lessons.map((lesson) => {
-          return <Lesson lesson={lesson} setLessons={setLessons} />;
+          return <Lesson key={lesson._id} lesson={lesson} setLessons={setLessons} />;
         })
       ) : (
         <p> There are no lessons at this time </p>

@@ -27,4 +27,30 @@ async function postLessons (lessonObj) {
     }
 }
 
-module.exports = {getLessons, postLessons}
+async function acceptLesson(id) {
+    try {
+        const data = await fetch(`${url}/lessons/${id}/accept`, {
+        method: 'PUT'
+        })
+        const response = await data.json(); 
+        return response; 
+    } catch (err) {
+        console.log(err);
+    }
+
+}
+
+async function rejectLesson(id) {
+    try {
+        const data = await fetch(`${url}/lessons/${id}/reject`, {
+        method: 'PUT'
+        })
+        const response = await data.json(); 
+        return response; 
+    } catch (err) {
+        console.log(err);
+    }
+
+}
+
+module.exports = {getLessons, postLessons, acceptLesson, rejectLesson}

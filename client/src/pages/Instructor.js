@@ -17,7 +17,7 @@ const Instructor = () => {
     <div className="App">
       <NavBar />
       
-      <LessonList lessons={lessons} />
+      <LessonList lessons={lessons} setLessons={setLessons} />
     </div>
   );
 };
