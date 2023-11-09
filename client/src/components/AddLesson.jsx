@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { postLessons } from "../apiService";
+import { getWeather, postLessons } from "../apiService";
+import WeatherDisplay from "./WeatherDisplay";
 
 const AddLesson = () => {
   const [name, setName] = useState("");
@@ -7,6 +8,7 @@ const AddLesson = () => {
   const [level, setLevel] = useState("");
   const [date, setDate] = useState("");
   const [lessons, setLessons] = useState([]);
+  const [weather, setWeather] = useState([]);
 
 
   const lessonObj = {
@@ -15,6 +17,20 @@ const AddLesson = () => {
     level,
     date,
   };
+
+  const handleResortChange = async (selectedResort) => {
+    setResort(selectedResort);
+    if (selectedResort) {
+      try {
+        const weatherData = await getWeather(selectedResort);
+        setWeather(weatherData.list)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+  }
+
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -29,6 +45,7 @@ const AddLesson = () => {
   }
 
   return (
+    <>
     <form onSubmit={handleSubmit} className="lesson-booking-form-container">
       <div className="form-control">
         <label> NAME </label>
@@ -40,7 +57,7 @@ const AddLesson = () => {
           onChange={(e) => setName(e.target.value)}
         />
         <label> Select a resort: 
-        <select value={resort} onChange={(e) => setResort(e.target.value)}> 
+        <select value={resort} onChange={(e) => handleResortChange(e.target.value)}> 
           <option> </option>
           <option value="Arapahoe">Arapahoe</option> 
           <option value="Aspen">Aspen</option> 
@@ -67,6 +84,8 @@ const AddLesson = () => {
       </div>
       <input type="submit" value="Submit" />
     </form>
+    <WeatherDisplay weather={weather}/>
+    </>
   );
 };
 

@@ -8,20 +8,14 @@ import WeatherDisplay from "../components/WeatherDisplay";
 
 
 const SkiLesson = () => {
-  const [weather, setWeather] = useState([]);   
 
-  useEffect(() => {
-    getWeather().then((data) => {
-      setWeather(data.list);
-    });
-  }, []);
   
   
   return (
       <div>
         <NavBar></NavBar>
         <AddLesson />
-        <WeatherDisplay weather={weather} setWeather={setWeather} />
+        
       </div>
     )
   }

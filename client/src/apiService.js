@@ -55,22 +55,56 @@ async function rejectLesson(id) {
 }
 
 
-const weatherUrlOne = 'https://api.tomorrow.io/v4/timelines?location=39.1911, -106.8175&fields=temperature,snowAccumulation,weatherCode&timesteps=1d&units=imperial&apikey=XJ9HcYeTXjk0sPHLbU72f9x0NZFb8uno'
-
-const weatherUrlTwo = 'http://api.openweathermap.org/data/2.5/forecast?lat=39.6403&lon=-106.3742&appid=40898e103b782906f8b97d0274477058' 
-
-async function getWeather () {
-    try {
-        const data = await fetch(`${weatherUrlTwo}`);
-        console.log(data)
-        const res = await data.json(); 
-        console.log('getWeather data:', res)
-        return res; 
-    } catch (err) {
-        console.log(err);
+const coordinates = {
+    Aspen: {
+      lat: 39.1911,
+      long: -106.8175
+    },
+    Arapahoe: {
+      lat: 39.6425,
+      long: -105.8719
+    },
+    Breckenridge: {
+      lat: 39.4817,
+      long: -106.0384
+    },
+    Keystone: {
+      lat: 39.5792,
+      long: -105.9347
+    },
+    Vail: {
+      lat: 39.6403,
+      long: -106.3742
     }
-}
+  };
+  
+  async function getWeather(resortName) {
+  
+    const apiKey = '40898e103b782906f8b97d0274477058'; 
+    
+    
+    if (!coordinates[resortName]) {
+      throw new Error(`No coordinates found for resort: ${resortName}`);
+    }
+  
+    const { lat, long } = coordinates[resortName];
+    
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${apiKey}`;
+  
+    try {
+      const response = await fetch(weatherUrl);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const res = await response.json();
+      console.log('getWeather data:', res);
+      return res;
+    } catch (err) {
+      console.error('Error fetching weather data:', err);
+      throw err; 
+    }
+  }
+  
 
 
-
-module.exports = {getLessons, postLessons, acceptLesson, rejectLesson, getWeather }
+module.exports = {getLessons, postLessons, acceptLesson, rejectLesson, getWeather}
