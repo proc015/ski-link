@@ -27,7 +27,7 @@ const lessonSchema = new Schema({
         enum: ['Arapahoe', 'Aspen', 'Breckenridge', 'Keystone', 'Vail'], 
         required: true 
         },  
-    lesson: { 
+    level: { 
         type: String,
         enum: ['Beginner', 'Intermediate', 'Advanced'], 
         required: true 

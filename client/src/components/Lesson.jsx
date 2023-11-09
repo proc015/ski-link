@@ -6,7 +6,7 @@ const Lesson = ( {lesson} ) => {
       <div className='lesson-text-container'>
             <p> Name: {lesson.name} </p>
             <p> Resort: {lesson.resort} </p>
-            <p> Lesson Type: {lesson.lesson} </p>
+            <p> Lesson Type: {lesson.level} </p>
             <p> Date: {moment(lesson.date).format("MMMM Do, YYYY")} </p>
             <p> Status: {lesson.status} </p>
             <br></br>

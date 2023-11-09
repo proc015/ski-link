@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { postLessons } from "../apiService";
 
-const AddLesson = ({ setLessons }) => {
+const AddLesson = () => {
   const [name, setName] = useState("");
   const [resort, setResort] = useState("");
-  const [lesson, setLesson] = useState("");
+  const [level, setLevel] = useState("");
   const [date, setDate] = useState("");
+  const [lessons, setLessons] = useState([]);
+
 
   const lessonObj = {
     name,
     resort,
-    lesson,
+    level,
     date,
   };
 
@@ -21,7 +23,7 @@ const AddLesson = ({ setLessons }) => {
       setLessons((prev) => [...prev, newLesson]);
       setName("");
       setResort("");
-      setLesson("");
+      setLevel("");
       setDate("");
     });
   }
@@ -48,7 +50,7 @@ const AddLesson = ({ setLessons }) => {
           </select>
           </label>
           <label> Lesson type: 
-        <select value={lesson} onChange={(e) => setLesson(e.target.value)}> 
+        <select value={level} onChange={(e) => setLevel(e.target.value)}> 
         <option> </option>
           <option value="Beginner">Beginner</option> 
           <option value="Intermediate">Intermediate</option> 
