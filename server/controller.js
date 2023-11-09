@@ -22,3 +22,28 @@ exports.postLessons = async (req, res) => {
         res.sendStatus(404);
     }
 };
+
+exports.acceptLessons = async (req, res) => {
+    try {
+        const lesson = await Lesson.findById(req.params.id); 
+        lesson.status = 'ACCEPTED'; 
+        await lesson.save(); 
+        res.json(lesson);
+    } catch (err) {
+        console.log('err', err);
+        res.status(500).send('Server Error')
+    }
+};
+
+exports.rejectLessons = async (req, res) => {
+    try {
+        const lesson = await Lesson.findById(req.params.id); 
+        lesson.status = 'REJECTED'; 
+        await lesson.save(); 
+        res.json(lesson);
+    } catch (err) {
+        console.log('err', err);
+        res.status(500).send('Server Error')
+    }
+};
+
