@@ -1,10 +1,9 @@
-import NavBar from "../components/NavBar"
+import Login from "../components/Login"
 
 const Client = () => {
   return (
     <div>
-      <NavBar> </NavBar>
-      This is the client page
+      <Login> </Login>
     </div>
   )
 }

@@ -31,7 +31,6 @@ const AddLesson = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    alert('Successfully requested ski lesson!');
 
     postLessons(lessonObj).then((newLesson) => {
       setLessons((prev) => [...prev, newLesson]);
