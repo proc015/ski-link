@@ -34,8 +34,8 @@ function handleReject () {
             <p> Lesson Type: {lesson.level} </p>
             <p> Date: {moment(lesson.date).format("MMMM Do, YYYY")} </p>
             <p> Status: {lesson.status} </p>
-            <p onClick={handleAccept}> Accept </p>
-            <p onClick={handleReject}> Reject </p>
+            <button id="accept" onClick={handleAccept}> Accept </button>
+            <button id="reject" onClick={handleReject}> Reject </button>
             <br></br>
       </div>
     </div>

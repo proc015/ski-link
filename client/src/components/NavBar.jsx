@@ -1,17 +1,19 @@
 
 import { Link } from "react-router-dom"
+import logo from '../images/SkiLink_logo.png'
+
 
 const NavBar = () => {
   return (
-    <div className="navbar">
+    <div className="navbar-container">
         <div className="navbar-logo">
-            Insert logo
+            <img src={logo} alt="SkiLink Logo" height={50} width={163} ></img>
         </div>
         <ul className="navbar-menu">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/ski-lessons">Ski Lessons</Link></li>
-            <li><Link to="/instructor">Instructor</Link></li>
-            <li><Link to="/client">Client</Link></li>
+            <span><Link to="/">Home</Link></span>
+            <span><Link to="/ski-lessons">Ski Lessons</Link></span>
+            <span><Link to="/instructor">Instructor</Link></span>
+            <span><Link to="/client">Client</Link></span>
         </ul>
 
       

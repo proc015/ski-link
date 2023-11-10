@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+
+
+.navbar-container {
+    display: inline-flex;
+    padding: 5px 25px 5px 25px;
+    align-items: center;
+    gap: 596px;
+}
+
+.navbar-menu {
+    color: #50514F;
+    text-align: right;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.navbar-menu span {
+    margin-right: 20px;
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+#home-image {
+        width: 100%; /* Makes the image responsive */
+        height: auto; /* Maintains the aspect ratio */
+}
+
+.home-body-container {
+    position: relative; 
+}
+
+.home-text-container {
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    color: white; 
+    padding: 20px;
+    margin-top: 90px;
+}
+
+h1 {
+    font-family: Open Sans;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    
+}
+
+
+
+#peaks {
+    color: #F3DFA2;
+    font-family: Open Sans;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    
+}
+
+#home-tagline {
+    margin-top: 30px;
+    color: #FFF;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+}
+
+
+#home-booking {
+    margin-top: 50px;
+    display: inline-flex;
+    padding: 13px 26px 12px 25px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #F3DFA2;
+    border-style: #50514F;
+    font-weight: 800;
+
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 25px 5px 25px;
+    align-items: center;
+    gap: 0px;
+}
+
+.footer-menu {
+    color: #50514F;
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    
+}
+
+.footer-menu span {
+    margin-right: 20px;
+    
+}
+
+
+
+.lesson-booking-form-container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 17px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid black; 
+}
+
+.form-elements {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-control {
+    margin-right: 5px;
+    
+}
+
+input {
+    margin-top: 5px;
+    
+}
+
+select {
+    margin-top: 5px;
+    width: 150px;
+    height: 20px;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Open Sans;
+    color: black; 
+    
+}
+
+
+.lesson-list {
+    margin: 20px;
+}
+
+.lesson-text-container {
+    padding: 10px;
+    border: 1px solid black; 
+    border-radius: 8px;
+    margin-bottom: 20px;
+    
+}
+
+.lesson-text-container button {
+    margin-top: 20px;
+    padding: 10px 30px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#accept {
+    background-color: green;
+    margin-right: 5px;
+    
+}
+
+#reject {
+    background-color: red;
+}
+
+
+.weather-display-container {
+    display: flex; 
+}
+
+.weather-card-container {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 10px;
+        text-align: center;
+        width: 180px;    
+    }
+
+#temperature {
+    font-size: 24px; 
+}
