@@ -1,12 +1,27 @@
 import { useState } from 'react';
+import { postLogin } from '../apiService'; // Make sure this path is correct
 
-const Login = ({ onLogin }) => {
+const CustomerLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    onLogin(email, password);
+    
+    const loginObj = { email, password };
+    try {
+      const response = await postLogin(loginObj);
+      if (response.message) {
+        // Handle successful login here
+        console.log(response.message);
+        //  redirect to another route using your routing library
+      } else {
+        alert('login failed')
+        console.error('Login failed');
+      }
+    } catch (err) {
+      console.error('Error submitting login:', err);
+    }
   };
 
   return (
@@ -30,4 +45,4 @@ const Login = ({ onLogin }) => {
   );
 };
 
-export default Login;
+export default CustomerLogin;

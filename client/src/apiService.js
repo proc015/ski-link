@@ -29,6 +29,24 @@ async function postLessons (lessonObj) {
     }
 }
 
+
+async function postLogin (loginObj) {
+  try {
+      const data = await fetch(`${url}/login`, {
+          method: "POST", 
+          headers: {
+              "Content-Type": "application/json", 
+          }, 
+          body: JSON.stringify(loginObj)
+      }); 
+      const response = await data.json(); 
+      return response; 
+  } catch (err) {
+      console.log(err);
+  }
+}
+
+
 async function acceptLesson(id) {
     try {
         const data = await fetch(`${url}/lessons/${id}/accept`, {
@@ -107,4 +125,4 @@ const coordinates = {
   
 
 
-module.exports = {getLessons, postLessons, acceptLesson, rejectLesson, getWeather}
+module.exports = {getLessons, postLessons, acceptLesson, rejectLesson, getWeather, postLogin }

@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import SkiLesson from './pages/SkiLesson';
 import Client from './pages/Client';
+import Login from './pages/Login';
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/client",
     element: <Client/>,
+  },
+  {
+    path: "/login",
+    element: <Login/>,
   },
 ]);
 

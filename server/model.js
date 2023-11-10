@@ -44,20 +44,20 @@ const lessonSchema = new Schema({
 
 const Lesson = mongoose.model('Lesson', lessonSchema);
 
-const userSchema = new Schema({
-    email: { 
-        type: String,
-        required: true 
-        }, 
-    password: { 
-            type: String,
-            required: true 
-            },
-        });
+// const userSchema = new Schema({
+//     email: { 
+//         type: String,
+//         required: true 
+//         }, 
+//     password: { 
+//             type: String,
+//             required: true 
+//             },
+//         });
 
-const User = mongoose.model('User', userSchema);
+// const User = mongoose.model('User', userSchema);
 
 
 
-module.exports = { Lesson, User };
+module.exports = { Lesson };
 

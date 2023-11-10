@@ -1,9 +1,9 @@
-import Login from "../components/Login"
+
 
 const Client = () => {
   return (
     <div>
-      <Login> </Login>
+      This is client dashboard
     </div>
   )
 }

@@ -1,4 +1,4 @@
-const { Lesson, User } = require("./model");
+const { Lesson } = require("./model");
 
 exports.getLessons = async (req, res) => {
   try {
@@ -47,15 +47,19 @@ exports.rejectLessons = async (req, res) => {
   }
 };
 
+const hardcodedUser = {
+    email: 'john@gmail.com',
+    password: 'password123', // Change before going live 
+  };
+
 exports.postLogin = async (req, res) => {
-  try {
-    const newUser = req.body;
-    const createdUser = await User.create(newUser);
-    res.status(201);
-    res.json(createdUser);
-  } catch (err) {
-    console.log("err", err);
-    res.sendStatus(404);
-  }
+    const { email, password } = req.body;
+
+    // Need to access user and password in DB in live app
+    if (email === hardcodedUser.email && password === hardcodedUser.password) {
+      res.json({ message: 'Logged in successfully' });
+    } else {
+      res.status(401).json({ message: 'Invalid credentials' });
+    }
 };
 
