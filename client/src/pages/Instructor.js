@@ -18,6 +18,10 @@ const Instructor = () => {
     <div className="Instructor">
       <NavBar />
 
+      <div className="insturctor-header">
+        <h5>Instructor Dashboard</h5>
+      </div>
+    
       <LessonList lessons={lessons} setLessons={setLessons} />
     </div>
   );

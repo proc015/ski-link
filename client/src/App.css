@@ -16,6 +16,7 @@
     width: 100%;
     z-index: 1000;
     background-color: white;
+    border-bottom: 1px solid hsl(0, 0%, 90%);
     
 }
 
@@ -201,14 +202,15 @@ label {
 
 .lesson-list {
     margin: 20px;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 .lesson-text-container {
     padding: 10px;
-    border: 1px solid black; 
+    border: 1px solid grey; 
     border-radius: 8px;
     margin-bottom: 20px;
+    background-color:  #F7EBC6;
     
 }
 
@@ -298,4 +300,11 @@ h3 {
         margin-right: 30px;
         width: 350px;
         text-align: justify;   
+}
+
+.insturctor-header {
+    font-size: 30px;
+    margin-top: 80px;
+    margin-left: 30px;
+    padding: 10px;
 }

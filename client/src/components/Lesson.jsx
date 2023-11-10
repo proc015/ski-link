@@ -32,11 +32,11 @@ function handleReject () {
   return (
     <div className='Lesson'>
       <div className='lesson-text-container'>
-            <p> Name: {lesson.name} </p>
-            <p> Resort: {lesson.resort} </p>
-            <p> Lesson Type: {lesson.level} </p>
-            <p> Date: {moment(lesson.date).format("MMMM Do, YYYY")} </p>
-            <p> Status: {lesson.status} </p>
+            <p> <b>Name: </b> {lesson.name} </p>
+            <p> <b> Resort: </b> {lesson.resort} </p>
+            <p> <b> Lesson Type: </b> {lesson.level} </p>
+            <p> <b> Date: </b> {moment(lesson.date).format("MMMM Do, YYYY")} </p>
+            <p> <b> Status: </b> {lesson.status} </p>
             
             {isActionable && (
             <> 
