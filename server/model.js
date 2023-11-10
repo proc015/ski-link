@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 
-const url = 'mongodb://127.0.0.1:27017/lessons';
+const url = 'mongodb://127.0.0.1:27017/skilink';
 
 mongoose.connect(url, {
     useNewUrlParser: true,
@@ -44,5 +44,20 @@ const lessonSchema = new Schema({
 
 const Lesson = mongoose.model('Lesson', lessonSchema);
 
-module.exports = Lesson;
+const userSchema = new Schema({
+    email: { 
+        type: String,
+        required: true 
+        }, 
+    password: { 
+            type: String,
+            required: true 
+            },
+        });
+
+const User = mongoose.model('User', userSchema);
+
+
+
+module.exports = { Lesson, User };
 
