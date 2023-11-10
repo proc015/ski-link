@@ -7,7 +7,7 @@ import homeImage from './images/homepage_img.png'
 
 function App() {
   return (
-    <div className="App">
+    <div className="full-app-container">
       <NavBar />
     
     <div className="home-body-container">

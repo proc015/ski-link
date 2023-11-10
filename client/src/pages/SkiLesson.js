@@ -4,13 +4,13 @@ import NavBar from "../components/NavBar"
 
 import { useState, useEffect } from "react";
 import WeatherDisplay from "../components/WeatherDisplay";
+import Footer from "../components/Footer"
+
 
 
 
 const SkiLesson = () => {
 
-  
-  
   return (
       <div>
         <NavBar></NavBar>
@@ -30,13 +30,11 @@ const SkiLesson = () => {
             <h3> Advanced Ski Lessons </h3>
               <p> These sessions are crafted for those who can confidently navigate red runs and are ready to conquer black diamond slopes. Our advanced curriculum includes techniques for skiing in powder, mastering moguls, and perfecting short-radius turns. Our instructors will help you fine-tune your form, optimize your control at high speeds, and introduce dynamic skiing techniques.  </p>
           </div>
-          
-
-
-
-
-
         </div>
+
+    <Footer> </Footer>
+
+
       </div>
     )
   }

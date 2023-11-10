@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Open Sans;
     }
 
 
@@ -9,6 +10,13 @@
     padding: 5px 25px 5px 25px;
     align-items: center;
     gap: 596px;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+    
 }
 
 .navbar-menu {
@@ -37,6 +45,7 @@ a {
 
 .home-body-container {
     position: relative; 
+    margin-top: 60px; 
 }
 
 .home-text-container {
@@ -88,10 +97,16 @@ h1 {
     align-items: center;
     border-radius: 8px;
     background: #F3DFA2;
-    border-style: #50514F;
     font-weight: 800;
+    border: none; 
 
 }
+
+#home-booking:hover {
+    background: #E0C097; 
+}
+
+
 
 .footer-container {
     display: flex;
@@ -128,6 +143,7 @@ h1 {
     align-items: center;
     border-radius: 8px;
     border: 1px solid black; 
+    margin-top: 100px;
 }
 
 .form-elements {
@@ -182,6 +198,7 @@ label {
 
 .lesson-list {
     margin: 20px;
+    margin-top: 100px;
 }
 
 .lesson-text-container {
@@ -189,6 +206,11 @@ label {
     border: 1px solid black; 
     border-radius: 8px;
     margin-bottom: 20px;
+    
+}
+
+.lesson-text-container p {
+    margin-bottom: 5px;
     
 }
 
@@ -207,8 +229,16 @@ label {
     
 }
 
+#accept:hover {
+    background-color: darkgreen; 
+}
+
 #reject {
     background-color: red;
+}
+
+#reject:hover {
+    background-color: darkred; 
 }
 
 
@@ -228,4 +258,20 @@ label {
 
 #temperature {
     font-size: 24px; 
+}
+
+.ski-lesson-content-container {
+    display: flex; 
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.individual-content-container {
+    background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 10px;
+        width: 300px;
+        text-align: justify;   
 }
