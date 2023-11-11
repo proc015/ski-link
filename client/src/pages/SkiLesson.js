@@ -14,7 +14,12 @@ const SkiLesson = () => {
   return (
       <div>
         <NavBar></NavBar>
+        
+
+        <div className="background-addlesson-container">
         <AddLesson />
+
+        </div>
 
         <div className="ski-lesson-image-container">
           <img id ="ski-image" src={skiImage} alt="Ski Image"  /> 
