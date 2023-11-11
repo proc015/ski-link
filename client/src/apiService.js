@@ -12,6 +12,18 @@ async function getLessons () {
     }
 }
 
+async function getClientLessons (userName) {
+  try {
+      const data = await fetch (`${url}/lessons/${userName}`);
+      const response = await data.json(); 
+      console.log('getClientLessons data:', response)
+      return response; 
+      
+  } catch (err) {
+      console.log(err);
+  }
+}
+
 
 async function postLessons (lessonObj) {
     try {
@@ -141,4 +153,4 @@ const coordinates = {
   
 
 
-module.exports = {getLessons, postLessons, acceptLesson, rejectLesson, getWeather, postLogin, postInstructorLogin }
+module.exports = {getLessons, postLessons, acceptLesson, rejectLesson, getWeather, postLogin, postInstructorLogin, getClientLessons }

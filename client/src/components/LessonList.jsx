@@ -1,11 +1,11 @@
 import Lesson from "./Lesson";
 
-const LessonList = ({ lessons, setLessons }) => {
+const LessonList = ({ lessons, setLessons, isClientView }) => {
   return (
     <div className="lesson-list">
       {lessons.length ? (
         lessons.map((lesson) => {
-          return <Lesson key={lesson._id} lesson={lesson} setLessons={setLessons} />;
+          return <Lesson key={lesson._id} lesson={lesson} setLessons={setLessons} isClientView={isClientView} />;
         })
       ) : (
         <p> There are no lessons at this time </p>

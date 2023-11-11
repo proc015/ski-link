@@ -3,7 +3,7 @@ import { acceptLesson, rejectLesson } from "../apiService";
 import sortLessons from "../utils/sortLessons";
 import { useState } from "react";
 
-const Lesson = ( {lesson, setLessons} ) => {
+const Lesson = ( {lesson, setLessons, isClientView} ) => {
   const [isActionable, setisActionable] = useState(true);
   
   
@@ -38,7 +38,7 @@ function handleReject () {
             <p> <b> Date: </b> {moment(lesson.date).format("MMMM Do, YYYY")} </p>
             <p> <b> Status: </b> {lesson.status} </p>
             
-            {isActionable && (
+            {!isClientView && isActionable && (
             <> 
             <button id="accept" onClick={handleAccept}> Accept </button>
             <button id="reject" onClick={handleReject}> Reject </button>
