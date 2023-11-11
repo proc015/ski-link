@@ -43,7 +43,6 @@ const Weather = ({ item }) => {
     if (weatherId >= 700 && weatherId < 800) {
       return atmosphere;
     }
-    
   };
 
   const weatherImageUrl = getWeatherImageURL(weatherId);

@@ -5,7 +5,14 @@ const LessonList = ({ lessons, setLessons, isClientView }) => {
     <div className="lesson-list">
       {lessons.length ? (
         lessons.map((lesson) => {
-          return <Lesson key={lesson._id} lesson={lesson} setLessons={setLessons} isClientView={isClientView} />;
+          return (
+            <Lesson
+              key={lesson._id}
+              lesson={lesson}
+              setLessons={setLessons}
+              isClientView={isClientView}
+            />
+          );
         })
       ) : (
         <p> There are no lessons at this time </p>

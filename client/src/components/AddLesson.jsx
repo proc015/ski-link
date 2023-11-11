@@ -3,7 +3,7 @@ import { getWeather, postLessons } from "../apiService";
 import WeatherDisplay from "./WeatherDisplay";
 import { ToastContainer, toast } from "react-toastify";
 
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 const AddLesson = () => {
   const [name, setName] = useState("");
@@ -12,8 +12,6 @@ const AddLesson = () => {
   const [date, setDate] = useState("");
   const [lessons, setLessons] = useState([]);
   const [weather, setWeather] = useState([]);
-
-  
 
   const lessonObj = {
     name,
@@ -43,7 +41,7 @@ const AddLesson = () => {
       setResort("");
       setLevel("");
       setDate("");
-      toast.success('Lesson request successfully!', {
+      toast.success("Lesson request successfully!", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: true,
@@ -62,7 +60,6 @@ const AddLesson = () => {
         <div className="form-elements">
           <div className="form-control">
             <label>
-              
               Name:
               <input
                 type="text"
@@ -75,7 +72,6 @@ const AddLesson = () => {
           </div>
           <div className="form-control">
             <label>
-          
               Select a resort:
               <select
                 value={resort}
@@ -92,9 +88,7 @@ const AddLesson = () => {
           </div>
 
           <div className="form-control">
-
             <label>
-              
               Lesson type:
               <select value={level} onChange={(e) => setLevel(e.target.value)}>
                 <option> </option>
@@ -103,13 +97,10 @@ const AddLesson = () => {
                 <option value="Advanced">Advanced</option>
               </select>
             </label>
-          
-            </div>
+          </div>
 
-            <div className="form-control">
-
+          <div className="form-control">
             <label>
-              
               Date:
               <input
                 type="date"
