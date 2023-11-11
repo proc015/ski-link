@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { getWeather, postLessons } from "../apiService";
 import WeatherDisplay from "./WeatherDisplay";
+import { ToastContainer, toast } from "react-toastify";
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddLesson = () => {
   const [name, setName] = useState("");
@@ -9,6 +12,8 @@ const AddLesson = () => {
   const [date, setDate] = useState("");
   const [lessons, setLessons] = useState([]);
   const [weather, setWeather] = useState([]);
+
+  
 
   const lessonObj = {
     name,
@@ -38,11 +43,21 @@ const AddLesson = () => {
       setResort("");
       setLevel("");
       setDate("");
+      toast.success('Lesson request successfully!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     });
   }
 
   return (
     <>
+      <ToastContainer />
       <form onSubmit={handleSubmit} className="lesson-booking-form-container">
         <div className="form-elements">
           <div className="form-control">
