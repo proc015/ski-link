@@ -2,7 +2,7 @@ import CustomerLogin from "../components/CustomerLogin"
 
 const Login = () => {
   return (
-    <div>
+    <div className="login-container">
       <CustomerLogin />
     </div>
   )

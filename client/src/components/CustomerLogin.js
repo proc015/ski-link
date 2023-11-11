@@ -1,31 +1,36 @@
 import { useState } from 'react';
-import { postLogin } from '../apiService'; // Make sure this path is correct
+import { postLogin } from '../apiService'; 
+import { useNavigate } from 'react-router-dom';
+import logo from '../images/SkiLink_logo.png'
+
 
 const CustomerLogin = () => {
+  let navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
     const loginObj = { email, password };
-    try {
-      const response = await postLogin(loginObj);
-      if (response.message) {
-        // Handle successful login here
-        console.log(response.message);
-        //  redirect to another route using your routing library
+    const response = await postLogin(loginObj);
+      
+    if (response.message) {
+        navigate('/client');
       } else {
         alert('login failed')
         console.error('Login failed');
       }
-    } catch (err) {
-      console.error('Error submitting login:', err);
-    }
+    
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className='customer-login-container'>
+    <form className='login-form-container' onSubmit={handleSubmit}>
+      
+<div className='login-image'>
+    <img src={logo} alt="SkiLink Logo" height={50} width={163} ></img>
+      
+    </div>
       <input
         type="email"
         value={email}
@@ -40,8 +45,9 @@ const CustomerLogin = () => {
         placeholder="Enter password"
         required={true}
       />
-      <button type="submit">Login</button>
+      <button id='customer-login' type="submit">Login</button>
     </form>
+    </div>
   );
 };
 

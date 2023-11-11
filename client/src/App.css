@@ -308,3 +308,69 @@ h3 {
     margin-left: 30px;
     padding: 10px;
 }
+
+
+/* Customer Login CSS */
+
+.login-container {
+    position: absolute;
+    background-color: #f0faff;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    height:100%;
+    width:100%;
+}
+
+.customer-login-container {
+    max-width: 300px;
+    margin: 30px auto;
+    overflow: auto;
+    min-height: 300px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fafafa;
+    margin-top: 100px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1)
+
+}
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;    
+}
+
+.login-image {
+    display: grid;
+    place-items: center; 
+}
+
+.login-form-container input {
+    width: 100%;
+    height: 50px;
+    margin: 5px;
+    font-size: 14px;  
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box; 
+    border-radius: 8px;
+    
+}
+
+#customer-login {
+        margin-top: 20px;
+        padding: 10px 30px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #customer-login:hover {
+        background-color: #0056b3;
+    }
