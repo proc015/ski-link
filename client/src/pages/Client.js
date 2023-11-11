@@ -4,11 +4,10 @@ import { getClientLessons } from "../apiService";
 import { useState } from "react";
 import NavBar from "../components/NavBar";
 
-
 const Client = () => {
   const [lessons, setLessons] = useState([]);
-  
-  const userName = 'john'; //harcoded userName will change later 
+
+  const userName = "john"; //harcoded userName will change later
 
   useEffect(() => {
     getClientLessons(userName).then((data) => {
@@ -17,14 +16,20 @@ const Client = () => {
   }, [userName]);
 
   return (
-    <div className="Instructor">
+    <div className="Client">
       <NavBar />
 
-      <div className="insturctor-header">
-        <h5>Client Dashboard</h5>
+      <div className="client-dashboard-container">
+        <div className="client-header">
+          <h5>Client Dashboard</h5>
+        </div>
+
+        <LessonList
+          lessons={lessons}
+          setLessons={setLessons}
+          isClientView={true}
+        />
       </div>
-    
-      <LessonList lessons={lessons} setLessons={setLessons} isClientView={true} />
     </div>
   );
 };

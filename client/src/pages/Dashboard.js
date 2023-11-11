@@ -15,14 +15,15 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="Instructor">
+    <div className="Dashboard">
       <NavBar />
+      <div className="instructor-dashboard-container">
+        <div className="instructor-header">
+          <h5>Instructor Dashboard</h5>
+        </div>
 
-      <div className="insturctor-header">
-        <h5>Instructor Dashboard</h5>
+        <LessonList lessons={lessons} setLessons={setLessons} />
       </div>
-    
-      <LessonList lessons={lessons} setLessons={setLessons} />
     </div>
   );
 };

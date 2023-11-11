@@ -4,6 +4,7 @@
     font-family: Open Sans;
     }
 
+/* NavBar CSS */
 
 .navbar-container {
     display: inline-flex;
@@ -110,7 +111,7 @@ h1 {
     background: #E0C097; 
 }
 
-
+/* Footer CSS */
 
 .footer-container {
     display: flex;
@@ -136,7 +137,7 @@ h1 {
     
 }
 
-
+/* Ski-Lesson CSS */
 
 .lesson-booking-form-container {
     width: 60%;
@@ -200,6 +201,44 @@ label {
 }
 
 
+
+
+/* Instructor Dashboard Page CSS :#f0f0f0  #f0faff */
+
+.instructor-dashboard-container {
+    background-color: #F7F7F7;
+    margin-top: 60px;
+
+}
+
+.instructor-header {
+    font-size: 25px;
+    padding: 15px;
+    color: #333333;
+       
+}
+
+
+/* Customer Dashboard Page CSS */
+
+.client-dashboard-container {
+    background-color:  #F7F7F7;
+    margin-top: 60px;
+
+}
+
+.client-header {
+    font-size: 25px;
+    padding: 15px;
+    color: #444444; 
+       
+}
+
+
+
+
+/* LessonList Component CSS  */
+
 .lesson-list {
     margin: 20px;
     margin-top: 10px;
@@ -210,7 +249,7 @@ label {
     border: 1px solid grey; 
     border-radius: 8px;
     margin-bottom: 20px;
-    background-color:  #F7EBC6;
+    background-color:  #e8f4fd;
     
 }
 
@@ -218,6 +257,8 @@ label {
     margin-bottom: 5px;
     
 }
+
+
 
 .lesson-text-container button {
     margin-top: 20px;
@@ -302,12 +343,7 @@ h3 {
         text-align: justify;   
 }
 
-.insturctor-header {
-    font-size: 30px;
-    margin-top: 80px;
-    margin-left: 30px;
-    padding: 10px;
-}
+
 
 
 /* Customer Login CSS */
@@ -388,3 +424,4 @@ h3 {
     height:100%;
     width:100%;
 }
+
