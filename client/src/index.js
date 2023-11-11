@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Instructor from './pages/Instructor';
 
 import {
   createBrowserRouter,
@@ -12,6 +11,8 @@ import {
 import SkiLesson from './pages/SkiLesson';
 import Client from './pages/Client';
 import Login from './pages/Login';
+import Instructor from './pages/Instructor';
+import Dashboard from './pages/Dashboard';
 
 
 const router = createBrowserRouter([
@@ -24,8 +25,8 @@ const router = createBrowserRouter([
     element: <SkiLesson/>,
   },
   {
-    path: "/instructor",
-    element: <Instructor/>,
+    path: "/dashboard",
+    element: <Dashboard/>,
   },
   {
     path: "/client",
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login/>,
+  },
+  {
+    path: "/instructor",
+    element: <Instructor />,
   },
 ]);
 

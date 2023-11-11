@@ -49,7 +49,7 @@ exports.rejectLessons = async (req, res) => {
 
 const hardcodedUser = {
     email: 'john@gmail.com',
-    password: 'password123', // Change before going live 
+    password: 'password', // Change before going live 
   };
 
 exports.postLogin = async (req, res) => {
@@ -61,5 +61,21 @@ exports.postLogin = async (req, res) => {
     } else {
       res.status(401).json({ message: 'Invalid credentials' });
     }
+};
+
+const hardcodedInstructor = {
+  email: 'jane@gmail.com',
+  password: 'password', // Change before going live 
+};
+
+exports.postInstructorLogin = async (req, res) => {
+  const { email, password } = req.body;
+
+  // Need to access user and password in DB in live app
+  if (email === hardcodedInstructor.email && password === hardcodedInstructor.password) {
+    res.json({ message: 'Logged in successfully' });
+  } else {
+    res.status(401).json({ message: 'Invalid credentials' });
+  }
 };
 

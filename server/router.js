@@ -5,6 +5,8 @@ const controller = require('./controller');
 
 router.post('/login', controller.postLogin)
 
+router.post('/instructor', controller.postInstructorLogin)
+
 router.get('/lessons', controller.getLessons)
 
 router.post('/lessons', controller.postLessons)
