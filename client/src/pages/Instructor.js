@@ -2,7 +2,7 @@ import InstructorLogin from "../components/InstructorLogin"
 
 const Instructor = () => {
   return (
-    <div className="login-container">
+    <div className="instructor-login-container">
       <InstructorLogin />
     </div>
   )
