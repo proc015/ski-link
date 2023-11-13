@@ -142,6 +142,34 @@ async function getWeather(resortName) {
   }
 }
 
+
+async function getReviews() {
+  try {
+    const data = await fetch(`${url}/reviews`);
+    const response = await data.json();
+    console.log("getReviews data:", response);
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function postReviews(reviewObj) {
+  try {
+    const data = await fetch(`${url}/reviews`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(reviewObj),
+    });
+    const response = await data.json();
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 module.exports = {
   getLessons,
   postLessons,
@@ -151,4 +179,6 @@ module.exports = {
   postLogin,
   postInstructorLogin,
   getClientLessons,
+  getReviews,
+  postReviews,
 };

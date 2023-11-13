@@ -28,9 +28,9 @@ router.put("/lessons/:id/reject", dashboardController.rejectLessons);
 
 // routes: ratings 
 
-router.post("/ratings", ratingController.postRatings);
+router.post("/reviews", ratingController.postRatings);
 
-router.get("/ratings", ratingController.getRatings);
+router.get("/reviews", ratingController.getRatings);
 
 
 module.exports = router;

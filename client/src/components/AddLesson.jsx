@@ -41,7 +41,7 @@ const AddLesson = () => {
       setResort("");
       setLevel("");
       setDate("");
-      toast.success("Lesson request successfully!", {
+      toast.success("Lesson request successful!", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: true,

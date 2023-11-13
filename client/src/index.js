@@ -13,6 +13,7 @@ import Client from './pages/Client';
 import Login from './pages/Login';
 import Instructor from './pages/Instructor';
 import Dashboard from './pages/Dashboard';
+import Reviews from './pages/Reviews';
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/instructor",
     element: <Instructor />,
+  },
+  {
+    path: "/reviews",
+    element: <Reviews />,
   },
 ]);
 

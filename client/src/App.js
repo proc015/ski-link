@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import { Link } from "react-router-dom";
 
 import homeImage from "./images/homepage_img.png";
+import ReviewList from "./components/ReviewList";
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
           </button>
         </div>
       </div>
+
+      <ReviewList />
+
+
       <Footer />
     </div>
   );

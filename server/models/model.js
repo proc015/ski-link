@@ -48,7 +48,7 @@ const ratingSchema = new Schema({
         type: String,
         required: true
         },
-    rating: {
+    score: {
             type: Number,
             required: true
             },
