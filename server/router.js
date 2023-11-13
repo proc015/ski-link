@@ -1,18 +1,23 @@
 const router = require("express").Router();
-const controller = require("./controller");
 
-router.post("/login", controller.postLogin);
+const dashboardController = require('./controllers/dashboard');
 
-router.post("/instructor", controller.postInstructorLogin);
+const loginsController = require('./controllers/logins')
 
-router.get("/lessons", controller.getLessons);
+const clientController = require('./controllers/client')
 
-router.get("/lessons/:userName", controller.getClientLessons);
+router.post("/login", loginsController.postLogin);
 
-router.post("/lessons", controller.postLessons);
+router.post("/instructor", loginsController.postInstructorLogin);
 
-router.put("/lessons/:id/accept", controller.acceptLessons);
+router.get("/lessons/:userName", clientController.getClientLessons);
 
-router.put("/lessons/:id/reject", controller.rejectLessons);
+router.get("/lessons", dashboardController.getLessons);
+
+router.post("/lessons", dashboardController.postLessons);
+
+router.put("/lessons/:id/accept", dashboardController.acceptLessons);
+
+router.put("/lessons/:id/reject", dashboardController.rejectLessons);
 
 module.exports = router;
