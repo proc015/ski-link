@@ -43,17 +43,22 @@ const lessonSchema = new Schema({
 
 const Lesson = mongoose.model("Lesson", lessonSchema);
 
-// const userSchema = new Schema({
-//     email: {
-//         type: String,
-//         required: true
-//         },
-//     password: {
-//             type: String,
-//             required: true
-//             },
-//         });
+const ratingSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+        },
+    rating: {
+            type: Number,
+            required: true
+            },
+    comment: {
+      type: String,
+      required: true
+      },
+        });
 
-// const User = mongoose.model('User', userSchema);
+const Rating = mongoose.model('Rating', ratingSchema);
 
-module.exports = { Lesson };
+
+module.exports = { Lesson, Rating };
