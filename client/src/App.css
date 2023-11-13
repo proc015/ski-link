@@ -391,3 +391,23 @@ h3 {
   height: 100%;
   width: 100%;
 }
+
+
+/* Review Page CSS */
+
+
+/* AddReview Component  */
+
+button #star-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.on {
+  color: #000;
+}
+.off {
+  color: #ccc;
+}

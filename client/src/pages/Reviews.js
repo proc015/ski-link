@@ -1,5 +1,6 @@
 import AddReview from "../components/AddReview"
 import NavBar from "../components/NavBar"
+import StarRating from "../components/StarRating"
 
 
 const Reviews = () => {
@@ -7,6 +8,7 @@ const Reviews = () => {
     <div>
       
       <AddReview />
+      <StarRating />
     </div>
   )
 }
