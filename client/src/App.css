@@ -114,6 +114,8 @@ h1 {
   padding: 5px 25px 5px 25px;
   align-items: center;
   gap: 0px;
+  margin-top: 80px;
+  margin-bottom: 30px;
 }
 
 .footer-menu {
@@ -475,9 +477,21 @@ input#reviewSubmit{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 10px;
-  width: 325px;
+  width: 330px;
   margin-left: 20px;
 
+}
 
+.review-container p  {
+  margin-bottom: 0px;
+  color: #000080; 
+}
 
+.review-container p#name  {
+  font-size: 16px;
+}
+
+.review-container p#comment  {
+  font-size: 14px;
+  margin-top: 5px;
 }

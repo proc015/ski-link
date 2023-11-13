@@ -4,9 +4,10 @@ import StarRating from "./StarRating"
 const Reviews = ({review}) => {
   return (
     <div className="review-container">
-        <p> {review.name}</p>
-        < StarRating rating={review.score} />
-        <p> {review.comment} </p>
+        <p id='name'> <b> {review.name} </b> </p>
+        <p>
+        < StarRating rating={review.score} /> </p>
+        <p id="comment"> {review.comment} </p>
     </div>
   )
 }
