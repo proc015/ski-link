@@ -6,9 +6,9 @@ import StarRating from "../components/StarRating"
 const Reviews = () => {
   return (
     <div>
-      
+      <NavBar />
       <AddReview />
-      <StarRating />
+      
     </div>
   )
 }

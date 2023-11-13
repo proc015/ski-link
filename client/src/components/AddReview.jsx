@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { postReviews } from "../apiService";
+import StarRating from './StarRating';
 
 const AddReview = () => {
   const [name, setName] = useState("");
@@ -43,7 +44,8 @@ const AddReview = () => {
         <div className="rating-form-control">
           <label>
             Name:
-            <input
+            <textarea
+              id="name"
               type="text"
               required={true}
               placeholder=""
@@ -55,13 +57,9 @@ const AddReview = () => {
 
         <div className="rating-form-control">
           <label>
-            Score:
-            <input
-              type="text"
-              required={true}
-              placeholder=""
-              value={score}
-              onChange={(e) => setScore(e.target.value)}
+            Rating:
+            < StarRating rating={score} setRating={setScore}
+              
             />
           </label>
         </div>
@@ -69,7 +67,8 @@ const AddReview = () => {
         <div className="rating-form-control">
           <label>
             Comments:
-            <input
+            <textarea
+              id='comments'
               type="text"
               required={true}
               placeholder=""
@@ -78,7 +77,7 @@ const AddReview = () => {
             />
           </label>
         </div>
-        <input type="submit" value="Submit" />
+        <input id="reviewSubmit" type="submit" value="Submit" />
 
       </form>
     </>
