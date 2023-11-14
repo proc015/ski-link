@@ -1,4 +1,5 @@
-import { API_KEY } from "./config/apikey";
+// import { API_KEY } from './config/apikey'
+// console.log(API_KEY)
 
 const url = "http://localhost:3000";
 
@@ -119,8 +120,10 @@ const coordinates = {
   },
 };
 
-async function getWeather(resortName) {
-  const apiKey = API_KEY;
+
+async function getWeather (resortName) {
+  
+  const apiKey = '40898e103b782906f8b97d0274477058';
 
   if (!coordinates[resortName]) {
     throw new Error(`No coordinates found for resort: ${resortName}`);
