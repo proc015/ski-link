@@ -1,7 +1,25 @@
 import { useState } from "react";
 
-const StarRating = ({ rating, setRating }) => {
+const StarRating = ({ rating, setRating, interactive = true }) => {
   const [hover, setHover] = useState(0);
+
+  const handleClick = (index) => {
+    if (interactive) {
+      setRating(index);
+    }
+  };
+
+  const handleMouseEnter = (index) => {
+    if (interactive) {
+      setHover(index);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (interactive) {
+      setHover(rating);
+    }
+  };
 
   return (
     <div className="star-rating-container">
@@ -11,10 +29,11 @@ const StarRating = ({ rating, setRating }) => {
           <button
             type="button"
             key={index}
-            className={index <= rating ? "on" : "off"}
-            onClick={() => setRating(index)}
-            onMouseEnter={() => setHover(index)}
-            onMouseLeave={() => setHover(rating)}
+            className={index <= (hover || rating) ? "on" : "off"}
+            onClickCapture={() => handleClick(index)}
+            onClick={() => interactive && setRating(index)}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={() => handleMouseLeave(rating)}
           >
             <span className="star" >&#9733; </span>
           </button>

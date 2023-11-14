@@ -7,8 +7,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 
-
-
 const ReviewList = () => {
   const [reviews, setReviews] = useState([]);
 
@@ -28,7 +26,7 @@ const ReviewList = () => {
     
       {reviews.map((review) => (
         <SwiperSlide key={review._id}> 
-        <Reviews review={review} />
+        <Reviews review={review} interactive={false} />
         </SwiperSlide>
       ))}
       
