@@ -14,3 +14,4 @@ export interface RatingsList {
     comment: string
 }
 
+

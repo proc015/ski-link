@@ -8,15 +8,15 @@ interface StarRatingProps {
 
 
 const StarRating: React.FC<StarRatingProps> = ({ rating, interactive, setRating }) => {
-  const [hover, setHover] = useState(0);
+  const [hover, setHover] = useState<number>(0);
 
-  const handleClick = (index) => {
-    if (interactive) {
+  const handleClick = (index: number) => {
+    if (interactive && setRating) {
       setRating(index);
     }
   };
 
-  const handleMouseEnter = (index) => {
+  const handleMouseEnter = (index: number) => {
     if (interactive) {
       setHover(index);
     }
@@ -38,9 +38,10 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, interactive, setRating 
             key={index}
             className={index <= (hover || rating) ? "on" : "off"}
             onClickCapture={() => handleClick(index)}
-            onClick={() => interactive && setRating(index)}
+            onClick={() => interactive && setRating && setRating(index)}
             onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave(rating)}
+            // onMouseLeave={() => handleMouseLeave(rating)}
+            onMouseLeave={handleMouseLeave}
           >
             <span className="star" >&#9733; </span>
           </button>
