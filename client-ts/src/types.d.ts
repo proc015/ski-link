@@ -14,4 +14,11 @@ export interface RatingsList {
     comment: string
 }
 
+export interface Review {
+    name: string,
+    score: number,
+    comment: string,
+    reviews: string
+}
+
 

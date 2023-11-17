@@ -2,7 +2,7 @@ import { useState } from "react";
 
 interface StarRatingProps {
   rating: number;
-  interactive: boolean;
+  interactive?: boolean;
   setRating?: (newRating: number) => void;
 }
 
