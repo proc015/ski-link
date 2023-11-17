@@ -44,19 +44,21 @@ const AddLesson = () => {
     });
     if (selectedResort) {
       try {
-        console.log(inputValues)
+        console.log('SELECTED RESORT: ',selectedResort)
         const weatherData = await getWeather(selectedResort);
         setInputValues({
           ...inputValues,
-          weather: weatherData.list
+          weather: weatherData.list,
+          resort: selectedResort
         });
+        console.log('AFTER TRY HANDLE RESORT CHANGE',inputValues)
       } catch (err) {
         console.log(err);
       }
     }
   };
 
-  function handleSubmit(e) {
+  function handleSubmit(e: { preventDefault: () => void; }) {
     e.preventDefault();
 
     const lessonObj = {
@@ -65,16 +67,11 @@ const AddLesson = () => {
 
     postLessons(lessonObj).then((newLesson) => {
       console.log(newLesson)
-      setLessons((prev) => [...prev, newLesson]);
       setInputValues({
         ...inputValues,
-        name: '',
-        resort: '',
-        level: '',
-        date: '',
-        lessons: [],
-        weather: []
-      });
+        lessons : newLesson
+      })
+      //setLessons((prev) => [...prev, newLesson]);
       toast.success("Lesson request successful!", {
         position: "top-right",
         autoClose: 2000,
@@ -84,6 +81,8 @@ const AddLesson = () => {
         draggable: true,
         progress: undefined,
       });
+      console.log(inputValues)
+      console.log(newLesson)
     });
   }
 
@@ -131,7 +130,7 @@ const AddLesson = () => {
           <div className="form-control">
             <label>
               Lesson type:
-              <select value={inputValues.lessons} onChange={handleChange} name="lessons">
+              <select value={inputValues.level} onChange={handleChange} name="level">
                 <option> </option>
                 <option value="Beginner">Beginner</option>
                 <option value="Intermediate">Intermediate</option>
