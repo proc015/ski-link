@@ -3,7 +3,7 @@ import React from 'react'
 const Lesson = () => {
   return (
     <div>
-      
+
     </div>
   )
 }

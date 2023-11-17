@@ -1,11 +1,10 @@
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import '../App.css';
 import { Link } from "react-router-dom";
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import ReviewList from '../components/ReviewList';
 
-import homeImage from "./images/homepage_img.png";
+import homeImage from "../images/homepage_img.png";
 
 const Home = () => {
     return (
