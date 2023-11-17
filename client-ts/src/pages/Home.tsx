@@ -20,7 +20,7 @@ const Home = () => {
                     <p id="home-tagline"> Your alpine journey starts here </p>
 
                     <button id="home-booking">
-                        <Link to="/ski-lessons">Book Ski Lessons</Link>
+                        <Link to="/skilesson">Book Ski Lessons</Link>
                     </button>
                 </div>
             </div>

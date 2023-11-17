@@ -7,4 +7,10 @@ export interface Lesson {
     weather: string[]
 }
 
+export interface RatingsList {
+    _id: string,
+    name: string,
+    score: number,
+    comment: string
+}
 
