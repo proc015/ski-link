@@ -8,13 +8,13 @@ const ratingController = require('./controllers/rating')
 
 // routes: logins 
 
-router.post("/login", loginsController.postLogin);
+router.post("/login/", loginsController.postLogin);
 
 router.post("/instructor", loginsController.postInstructorLogin);
 
 // routes: client dashboard 
 
-router.get("/lessons/:userName", clientController.getClientLessons);
+router.get("/lessons/:email", clientController.getClientLessons);
 
 // routes: instructor dashboard 
 

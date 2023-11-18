@@ -14,6 +14,7 @@ const CustomerLogin = () => {
     const response = await postLogin(loginObj);
 
     if (response.message) {
+      localStorage.setItem('email',email)
       navigate("/client");
     } else {
       alert("login failed");

@@ -14,11 +14,11 @@ async function getLessons() {
   }
 }
 
-async function getClientLessons(userName) {
+async function getClientLessons(email) {
   try {
     //when login works, uncomment and use that data
-  //const data = await fetch(`${url}/lessons/${userName}`);
-    const data = await fetch(`${url}/lessons`);
+    const data = await fetch(`${url}/lessons/${email}`);
+    //const data = await fetch(`${url}/lessons`);
     const response = await data.json();
     console.log("getClientLessons data:", response);
     return response;
@@ -46,6 +46,9 @@ async function postLessons(lessonObj) {
 }
 
 async function postLogin(loginObj) {
+  console.log(loginObj)
+  let email = loginObj.email
+  console.log(email)
   try {
     const data = await fetch(`${url}/login`, {
       method: "POST",
@@ -54,8 +57,15 @@ async function postLogin(loginObj) {
       },
       body: JSON.stringify(loginObj),
     });
-    const response = await data.json();
-    return response;
+
+    if(!data.ok) {
+      console.log(`Error: ${data.status} - ${data.statusText}}`)
+    }
+
+    else {
+      const response = await data.json();
+      return response;
+    }
   } catch (err) {
     console.log(err);
   }

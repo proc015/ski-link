@@ -18,10 +18,11 @@ const Client = () => {
   // })
 
   const userName = "john"; //harcoded userName will change later
+  const email = localStorage.getItem('email');
   //to improve, get userName from localStorage. set it in localStorage after login
 
   useEffect(() => {
-    getClientLessons(userName).then((data) => {
+    getClientLessons(email).then((data) => {
       setLessons(data);
     });
   }, [userName]);

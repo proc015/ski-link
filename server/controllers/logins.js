@@ -1,4 +1,4 @@
-
+const {User} = require('./../models/model')
 
 const hardcodedUser = {
     email: "john@gmail.com",
@@ -8,13 +8,38 @@ const hardcodedUser = {
   exports.postLogin = async (req, res) => {
     const { email, password } = req.body;
   
-    // Need to access user and password in DB in live app
-    if (email === hardcodedUser.email && password === hardcodedUser.password) {
-      res.json({ message: "Logged in successfully" });
-    } else {
-      res.status(401).json({ message: "Invalid credentials" });
+    try {
+      const user = await User.findOne({ email: email }).exec();
+  
+      if (user) {
+        // Ahora puedes comparar la contraseña usando bcrypt
+        //const passwordMatch = await bcrypt.compare(password, user.password);
+        
+        const passwordMatch = true
+
+        if (passwordMatch) {
+          console.log('Contraseña válida. Usuario encontrado:', user);
+          res.status(200).json({ message: 'Login successfully' });
+        } else {
+          console.log('Contraseña incorrecta');
+          res.status(401).json({ message: 'Incorrect credentials' });
+        }
+      } else {
+        console.log('Usuario no encontrado');
+        res.status(401).json({ message: 'Incorrect credentials' });
+      }
+    } catch (error) {
+      console.error('Error al buscar usuario por email:', error);
+      res.status(500).json({ message: 'Internal server error' });
     }
   };
+
+
+    // if (email === hardcodedUser.email && password === hardcodedUser.password) {
+    //   res.json({ message: "Logged in successfully" });
+    // } else {
+    //   res.status(401).json({ message: "Invalid credentials" });
+    // }
   
   const hardcodedInstructor = {
     email: "jane@gmail.com",
