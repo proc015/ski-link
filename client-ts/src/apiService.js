@@ -16,7 +16,9 @@ async function getLessons() {
 
 async function getClientLessons(userName) {
   try {
-    const data = await fetch(`${url}/lessons/${userName}`);
+    //when login works, uncomment and use that data
+  //const data = await fetch(`${url}/lessons/${userName}`);
+    const data = await fetch(`${url}/lessons`);
     const response = await data.json();
     console.log("getClientLessons data:", response);
     return response;
