@@ -20,6 +20,14 @@ const Client = () => {
     weather: []
   })
 
+  const setLessons = (nwLesson: []) => {
+    setInputValues({
+      ...inputValues,
+      lessons: nwLesson
+    });
+  };
+
+
   const userName = "john"; //harcoded userName will change later
   //to improve, get userName from localStorage. set it in localStorage after login
 
@@ -40,7 +48,7 @@ const Client = () => {
         </div>
 
         <LessonList
-          lessons={lessons}
+          lessons={inputValues.lessons}
           setLessons={setLessons}
           isClientView={true}
         />
