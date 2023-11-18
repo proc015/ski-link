@@ -11,6 +11,7 @@ interface FormState {
 
 const Client = () => {
   const [inputValues, setInputValues] = useState<FormState['inputValues']>({
+    _id: '',
     name: '',
     resort: '',
     level: '',

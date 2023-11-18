@@ -1,5 +1,11 @@
 import Lesson from "./Lesson";
 
+interface lessonsClientview {
+  lessons:
+  setLessons: 
+  isClientView: 
+}
+
 const LessonList = ({ lessons, setLessons, isClientView }) => {
   return (
     <div className="lesson-list">
