@@ -1,12 +1,14 @@
-import Lesson from "./Lesson";
+import Lessons from "./Lessons";
+import { Lesson } from "../types";
 
 interface lessonsClientview {
-  lessons:
-  setLessons: 
-  isClientView: 
+  lessons: Lesson[]
+  setLessons?: (newLesson: []) => void;
+  isClientView: boolean
 }
 
-const LessonList = ({ lessons, setLessons, isClientView }) => {
+
+const LessonList: React.FC<lessonsClientview> = ({ lessons, setLessons, isClientView }) => {
   return (
     <div className="lesson-list">
       {lessons.length ? (
