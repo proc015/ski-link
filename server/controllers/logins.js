@@ -17,18 +17,14 @@ exports.postLogin = async (req, res) => {
       if (!passwordMatch) return res.status(400).json({message: "User or Password not found"});
 
       if (passwordMatch) {
-        console.log('Contraseña válida. Usuario encontrado:', user);
         res.status(200).json({ message: 'Login successfully' });
       } else {
-        console.log('Contraseña incorrecta');
         res.status(401).json({ message: 'Incorrect credentials' });
       }
     } else {
-      console.log('Usuario no encontrado');
       res.status(401).json({ message: 'Incorrect credentials' });
     }
   } catch (error) {
-    console.error('Error al buscar usuario por email:', error);
     res.status(500).json({ message: 'Internal server error' });
   }
 };
