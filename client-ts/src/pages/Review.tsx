@@ -1,11 +1,15 @@
-import React from 'react'
+import AddReview from "../components/AddReview"
+import NavBar from "../components/NavBar"
 
-const Review = () => {
+
+const Reviews = () => {
   return (
     <div>
-      
+      <NavBar />
+      <AddReview />
+
     </div>
   )
 }
 
-export default Review
+export default Reviews

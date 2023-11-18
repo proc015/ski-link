@@ -1,10 +1,12 @@
 export interface Lesson {
+    _id: string,
     name: string,
     resort: string,
     level: string,
     date: string,
     lessons: string[],
-    weather: string[]
+    weather: string[],
+    status?: string
 }
 
 export interface RatingsList {
@@ -20,5 +22,7 @@ export interface Review {
     comment: string,
     reviews: string
 }
+
+
 
 

@@ -12,6 +12,7 @@ interface FormState {
 const AddLesson = () => {
 
   const [inputValues, setInputValues] = useState<FormState['inputValues']>({
+    _id: '',
     name: '',
     resort: '',
     level: '',
@@ -44,14 +45,14 @@ const AddLesson = () => {
     });
     if (selectedResort) {
       try {
-        console.log('SELECTED RESORT: ',selectedResort)
+        console.log('SELECTED RESORT: ', selectedResort)
         const weatherData = await getWeather(selectedResort);
         setInputValues({
           ...inputValues,
           weather: weatherData.list,
           resort: selectedResort
         });
-        console.log('AFTER TRY HANDLE RESORT CHANGE',inputValues)
+        console.log('AFTER TRY HANDLE RESORT CHANGE', inputValues)
       } catch (err) {
         console.log(err);
       }
@@ -69,7 +70,7 @@ const AddLesson = () => {
       console.log(newLesson)
       setInputValues({
         ...inputValues,
-        lessons : newLesson
+        lessons: newLesson
       })
       //setLessons((prev) => [...prev, newLesson]);
       toast.success("Lesson request successful!", {
