@@ -1,9 +1,6 @@
 const { User } = require('./../models/model')
+const bcrypt = require('bcrypt');
 
-const hardcodedUser = {
-  email: "john@gmail.com",
-  password: "password", // Change before going live
-};
 
 exports.postLogin = async (req, res) => {
   const { email, password } = req.body;
@@ -15,7 +12,9 @@ exports.postLogin = async (req, res) => {
       // Ahora puedes comparar la contraseña usando bcrypt
       //const passwordMatch = await bcrypt.compare(password, user.password);
 
-      const passwordMatch = true
+      const passwordMatch = await bcrypt.compare(password, user.password);
+
+      if (!passwordMatch) return res.status(400).json({message: "User or Password not found"});
 
       if (passwordMatch) {
         console.log('Contraseña válida. Usuario encontrado:', user);
@@ -44,10 +43,11 @@ exports.registerUser = async (req, res) => {
       res.status(401).json({ message: 'User already exists' });
     } else {
       // hash password
+      const passwordHashed = await bcrypt.hash(password, 10);
 
       const user = await User.create({
         email,
-        password: password // cambiar por hashed password
+        password: passwordHashed // cambiar por hashed password
       });
 
       if (user) {
