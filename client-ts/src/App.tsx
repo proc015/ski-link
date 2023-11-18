@@ -1,12 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Link } from "react-router-dom";
 import Home from './pages/Home';
-import Footer from './components/Footer';
-import NavBar from './components/NavBar';
-import ReviewList from './components/ReviewList';
-
-import homeImage from "./images/homepage_img.png";
 import Client from './pages/Client';
 import Dashboard from './pages/Dashboard';
 import Instructor from './pages/Instructor';
