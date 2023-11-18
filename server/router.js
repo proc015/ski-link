@@ -12,6 +12,10 @@ router.post("/login/", loginsController.postLogin);
 
 router.post("/instructor", loginsController.postInstructorLogin);
 
+//routes: register
+
+router.post('/register', loginsController.registerUser);
+
 // routes: client dashboard 
 
 router.get("/lessons/:email", clientController.getClientLessons);

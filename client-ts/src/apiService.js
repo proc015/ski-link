@@ -46,11 +46,32 @@ async function postLessons(lessonObj) {
 }
 
 async function postLogin(loginObj) {
-  console.log(loginObj)
   let email = loginObj.email
-  console.log(email)
   try {
     const data = await fetch(`${url}/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginObj),
+    });
+
+    if(!data.ok) {
+      console.log(`Error: ${data.status} - ${data.statusText}}`)
+    }
+
+    else {
+      const response = await data.json();
+      return response;
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function postRegister(loginObj) {
+  try {
+    const data = await fetch(`${url}/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -200,4 +221,5 @@ module.exports = {
   getClientLessons,
   getReviews,
   postReviews,
+  postRegister,
 };

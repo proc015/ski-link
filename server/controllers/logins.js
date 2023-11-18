@@ -35,33 +35,33 @@ exports.postLogin = async (req, res) => {
 };
 
 exports.registerUser = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { email, password } = req.body;
 
   try {
     const userExists = await User.findOne({ email });
 
     if (userExists) {
-      res.status(400);
-      throw new Error('User already exists');
-    }
-
-    // hash password
-
-    const user = await User.create({
-      name,
-      email,
-      password: password // cambiar por hashed password
-    });
-
-    if (user) {
-      res.status(201).json({
-        _id: user._id,
-        name: user.name,
-        email: user.email
-      });
+      res.status(401).json({ message: 'User already exists' });
     } else {
-      res.status(400).json({ message: 'incorrect user data' })
+      // hash password
+
+      const user = await User.create({
+        email,
+        password: password // cambiar por hashed password
+      });
+
+      if (user) {
+        res.status(201).json({message: 'User registered',
+          _id: user._id,
+          name: user.name,
+          email: user.email
+        });
+      } else {
+        res.status(400).json({ message: 'incorrect user data' })
+      }
     }
+
+
   } catch (error) {
     console.error('Error user registration:', error);
     res.status(500).json({ message: 'Internal server error' });

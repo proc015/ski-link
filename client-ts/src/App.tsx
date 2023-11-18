@@ -7,6 +7,7 @@ import Instructor from './pages/Instructor';
 import Login from './pages/Login';
 import Review from './pages/Review';
 import SkiLesson from './pages/SkiLesson';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/reviews' element={<Review />} />
           <Route path='/skilesson' element={<SkiLesson />} />
+          <Route path='/register' element={<Register />} />
         </Routes>
       </Router>
     </div>
