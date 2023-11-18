@@ -5,38 +5,27 @@ import { useState } from "react";
 import NavBar from "../components/NavBar";
 import { Lesson } from "../types";
 
-interface FormState {
-  inputValues: Lesson;
-}
-
 const Client = () => {
-  const [inputValues, setInputValues] = useState<FormState['inputValues']>({
-    _id: '',
-    name: '',
-    resort: '',
-    level: '',
-    date: '',
-    lessons: [],
-    weather: []
-  })
-
-  const setLessons = (nwLesson: []) => {
-    setInputValues({
-      ...inputValues,
-      lessons: nwLesson
-    });
-  };
-
+  const [lessons, setLessons] = useState<Lesson[]>([]);
+  // const [inputValues, setInputValues] = useState<FormState['inputValues']>({
+  //   _id: '',
+  //   name: '',
+  //   resort: '',
+  //   level: '',
+  //   date: '',
+  //   lessons: [],
+  //   weather: []
+  // })
 
   const userName = "john"; //harcoded userName will change later
   //to improve, get userName from localStorage. set it in localStorage after login
 
   useEffect(() => {
     getClientLessons(userName).then((data) => {
-      setInputValues(data);
+      setLessons(data);
     });
   }, [userName]);
-  
+
 
   return (
     <div className="Client">
@@ -48,7 +37,7 @@ const Client = () => {
         </div>
 
         <LessonList
-          lessons={inputValues.lessons}
+          lessons={lessons}
           setLessons={setLessons}
           isClientView={true}
         />

@@ -1,11 +1,11 @@
-import React from 'react'
+import InstructorLogin from "../components/InstructorLogin";
 
 const Instructor = () => {
   return (
-    <div>
-      
+    <div className="instructor-login-container">
+      <InstructorLogin />
     </div>
-  )
-}
+  );
+};
 
-export default Instructor
+export default Instructor;

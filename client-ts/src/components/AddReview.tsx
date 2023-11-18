@@ -41,10 +41,17 @@ const AddReview = () => {
     e.preventDefault();
 
     postReviews(reviewObj).then((newReview) => {
+      // setInputValues({
+      //   ...inputValues,
+      //   reviews: newReview
+      // })
+
       setInputValues({
-        ...inputValues,
+        name: '',
+        score: 0,
+        comment: '',
         reviews: newReview
-      })
+      });
 
       toast.success("Review submitted!", {
         position: "top-right",

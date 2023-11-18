@@ -33,11 +33,6 @@ const AddLesson = () => {
 
   }
 
-
-
-
-
-
   const handleResortChange = async (selectedResort: string) => {
     setInputValues({
       ...inputValues,
