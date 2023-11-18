@@ -36,6 +36,8 @@ async function postLessons(lessonObj) {
       },
       body: JSON.stringify(lessonObj),
     });
+    
+    console.log('llego 40')
     const response = await data.json();
     return response;
   } catch (err) {

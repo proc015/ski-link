@@ -39,6 +39,10 @@ const lessonSchema = new Schema({
     type: String,
     default: "PENDING",
   },
+  email: {
+    type: String,
+    required: true,
+  }
 });
 
 const Lesson = mongoose.model("Lesson", lessonSchema);

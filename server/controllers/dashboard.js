@@ -14,6 +14,8 @@ exports.getLessons = async (req, res) => {
 exports.postLessons = async (req, res) => {
   try {
     const newLesson = req.body;
+    console.log('L17',newLesson)
+    
     const createdLesson = await Lesson.create(newLesson);
     res.status(201);
     res.json(createdLesson);

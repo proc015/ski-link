@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { getWeather, postLessons } from "../apiService";
-import WeatherDisplay from "./WeatherDisplay";
 import { ToastContainer, toast } from "react-toastify";
 import { Lesson } from "../types";
 import "react-toastify/dist/ReactToastify.css";
@@ -12,13 +11,13 @@ interface FormState {
 const AddLesson = () => {
 
   const [inputValues, setInputValues] = useState<FormState['inputValues']>({
-    _id: '',
     name: '',
     resort: '',
     level: '',
     date: '',
     lessons: [],
-    weather: []
+    weather: [],
+    email:'',
   })
 
 
@@ -57,15 +56,17 @@ const AddLesson = () => {
   function handleSubmit(e: { preventDefault: () => void; }) {
     e.preventDefault();
 
+    let getEmailFromLS = localStorage.getItem('email') || '';
     const lessonObj = {
-      ...inputValues
+      ...inputValues,
+      email: getEmailFromLS
     }
 
     postLessons(lessonObj).then((newLesson) => {
       console.log(newLesson)
       setInputValues({
         ...inputValues,
-        lessons: newLesson
+        lessons: newLesson,
       })
       //setLessons((prev) => [...prev, newLesson]);
       toast.success("Lesson request successful!", {
@@ -82,7 +83,6 @@ const AddLesson = () => {
     });
   }
 
-  {/*  */ }
 
 
 
