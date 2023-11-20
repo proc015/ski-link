@@ -14,7 +14,7 @@ const CustomerLogin = () => {
     const response = await postLogin(loginObj);
 
     if (response.message) {
-      localStorage.setItem('email',email)
+      localStorage.setItem('email', email)
       navigate("/client");
     } else {
       alert("login failed");
@@ -42,15 +42,11 @@ const CustomerLogin = () => {
           placeholder="Enter password"
           required={true}
         />
-        <button id="customer-login" type="submit">
-          Login
-        </button>
+        <button className="customer-login" type="submit">Login</button>
+        <Link className="register-btn" to="/register">
+          <button className="register-inner-btn" type="submit">Register</button>
+        </Link>
       </form>
-      <div className="">
-          <Link to="/register">
-            <button id="customer-login">Register</button>
-          </Link>
-      </div>
     </div>
   );
 };

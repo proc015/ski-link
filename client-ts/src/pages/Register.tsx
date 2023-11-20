@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logo from "../images/SkiLink_logo.png";
 import { postRegister } from '../apiService';
 
@@ -13,12 +13,12 @@ const Register = () => {
   const handleSubmit = async (event: { preventDefault: () => void; }) => {
     event.preventDefault();
     const registerObj = { email, password };
-    
+
     //Post register, change postlogin to postregister. first create in apiService.js
     const response = await postRegister(registerObj);
 
     if (!response.error) {
-      localStorage.setItem('email',email)
+      localStorage.setItem('email', email)
       navigate("/");
     } else {
       alert("login failed");
@@ -47,15 +47,8 @@ const Register = () => {
           placeholder="Enter password"
           required={true}
         />
-        <button id="customer-login" type="submit">
-        <Link to="/register">
-            <button id="customer-login">Register</button>
-          </Link>
-        </button>
+        <button className="customer-login" type="submit">Register</button>
       </form>
-      <div className="">
-          
-      </div>
     </div>
   )
 }

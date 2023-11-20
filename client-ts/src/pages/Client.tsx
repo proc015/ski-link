@@ -4,28 +4,28 @@ import { getClientLessons } from "../apiService";
 import { useState } from "react";
 import NavBar from "../components/NavBar";
 import { Lesson } from "../types";
+import { useNavigate } from "react-router-dom";
 
 const Client = () => {
-  const [lessons, setLessons] = useState<Lesson[]>([]);
-  // const [inputValues, setInputValues] = useState<FormState['inputValues']>({
-  //   _id: '',
-  //   name: '',
-  //   resort: '',
-  //   level: '',
-  //   date: '',
-  //   lessons: [],
-  //   weather: []
-  // })
+  let navigate = useNavigate();
 
-  const userName = "john"; //harcoded userName will change later
+  const [lessons, setLessons] = useState<Lesson[]>([]);
+
   const email = localStorage.getItem('email');
-  //to improve, get userName from localStorage. set it in localStorage after login
+  useEffect(() => {
+    if (!email) {
+      navigate('/')
+    }
+  })
 
   useEffect(() => {
     getClientLessons(email).then((data) => {
       setLessons(data);
     });
-  }, [userName]);
+  }, [email]);
+
+
+
 
 
   return (

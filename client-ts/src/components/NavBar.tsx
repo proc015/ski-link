@@ -2,6 +2,12 @@ import { Link } from "react-router-dom";
 import logo from "../images/SkiLink_logo.png";
 
 const NavBar = () => {
+
+  function handleLogout() {
+    localStorage.removeItem('email')
+    window.location.reload();
+  }
+
   return (
     <div className="navbar-container">
       <div className="navbar-logo">
@@ -22,6 +28,9 @@ const NavBar = () => {
         </span>
         <span>
           <Link to="/login">Login</Link>
+        </span>
+        <span onClick={handleLogout}>
+          <Link to="/">Logout</Link>
         </span>
       </ul>
     </div>

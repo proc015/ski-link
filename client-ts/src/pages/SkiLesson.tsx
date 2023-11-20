@@ -1,15 +1,24 @@
-import { getWeather } from "../apiService";
 import AddLesson from "../components/AddLesson";
 import NavBar from "../components/NavBar";
+import { useNavigate } from "react-router-dom";
 
-import { useState, useEffect } from "react";
-import WeatherDisplay from "../components/WeatherDisplay";
+import { useEffect } from "react";
 import Footer from "../components/Footer";
 import skiImage from "../images/ski_lesson_img.png";
 
 
 
 const SkiLesson = () => {
+  let navigate = useNavigate();
+
+
+  const getUserEmail = localStorage.getItem('email')
+
+  useEffect(() => {
+    if (!getUserEmail) {
+      navigate('/')
+    }
+  })
   return (
     <div>
       <NavBar />
@@ -19,7 +28,7 @@ const SkiLesson = () => {
       </div>
 
       <div className="ski-lesson-image-container">
-        <img id="ski-image" src={skiImage} alt="Ski Image" />
+        <img id="ski-image" src={skiImage} alt="Ski" />
 
         <div className="ski-lesson-content-container">
           <div className="individual-content-container">

@@ -36,7 +36,7 @@ async function postLessons(lessonObj) {
       },
       body: JSON.stringify(lessonObj),
     });
-    
+
     console.log('llego 40')
     const response = await data.json();
     return response;
@@ -46,7 +46,6 @@ async function postLessons(lessonObj) {
 }
 
 async function postLogin(loginObj) {
-  let email = loginObj.email
   try {
     const data = await fetch(`${url}/login`, {
       method: "POST",
@@ -56,7 +55,7 @@ async function postLogin(loginObj) {
       body: JSON.stringify(loginObj),
     });
 
-    if(!data.ok) {
+    if (!data.ok) {
       console.log(`Error: ${data.status} - ${data.statusText}}`)
     }
 
@@ -79,7 +78,7 @@ async function postRegister(loginObj) {
       body: JSON.stringify(loginObj),
     });
 
-    if(!data.ok) {
+    if (!data.ok) {
       console.log(`Error: ${data.status} - ${data.statusText}}`)
     }
 
@@ -156,8 +155,8 @@ const coordinates = {
 };
 
 
-async function getWeather (resortName) {
-  
+async function getWeather(resortName) {
+
   const apiKey = '40898e103b782906f8b97d0274477058';
 
   if (!coordinates[resortName]) {
