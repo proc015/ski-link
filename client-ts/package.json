@@ -33,6 +33,14 @@
       "react-app/jest"
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      "swiper/react": "swiper/swiper-react.mjs",
+      "swiper/css": "swiper/swiper.min.css",
+      "swiper/modules": "swiper/modules/navigation.mjs"
+    }
+  },
+  
   "browserslist": {
     "production": [
       ">0.2%",
