@@ -15,7 +15,7 @@ jest.mock('swiper/modules', () => ({
 
 jest.mock('swiper/css', () => jest.fn());
 
-test('renders learn react link', () => {
+test('renders app', () => {
   render(<App />);
   const linkElement = screen.getByText(/Login/i);
   expect(linkElement).toBeInTheDocument();
@@ -34,5 +34,3 @@ test('render login', () => {
   expect(getLogin).toBeInTheDocument();
   expect(getRegister).toBeInTheDocument();
 });
-
-
