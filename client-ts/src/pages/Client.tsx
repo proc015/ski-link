@@ -24,10 +24,6 @@ const Client = () => {
     });
   }, [email]);
 
-
-
-
-
   return (
     <div className="Client">
       <NavBar />

@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import { render, screen } from '@testing-library/react';
 import App from '../App';
-import Login from '../pages/Login';
 
 jest.mock('swiper/react', () => ({
   Swiper: ({ children }: { children?: ReactNode }) => <div>{children}</div>,

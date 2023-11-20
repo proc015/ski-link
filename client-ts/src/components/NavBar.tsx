@@ -29,7 +29,7 @@ const NavBar = () => {
         <span>
           <Link to="/login">Login</Link>
         </span>
-        <span onClick={handleLogout}>
+        <span onClick={handleLogout} id="log-out-navbar">
           <Link to="/">Logout</Link>
         </span>
       </ul>
