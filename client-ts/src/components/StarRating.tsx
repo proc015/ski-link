@@ -40,7 +40,6 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, interactive = true, set
             onClickCapture={() => handleClick(index)}
             onClick={() => interactive && setRating && setRating(index)}
             onMouseEnter={() => handleMouseEnter(index)}
-            // onMouseLeave={() => handleMouseLeave(rating)}
             onMouseLeave={handleMouseLeave}
           >
             <span className="star" >&#9733; </span>

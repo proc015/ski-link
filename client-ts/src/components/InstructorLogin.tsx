@@ -14,7 +14,6 @@ const InstructorLogin = () => {
     const response = await postInstructorLogin(instructorObj);
 
     if (response.message) {
-      console.log(response.message);
       navigate("/dashboard");
     } else {
       alert("login failed");
@@ -42,9 +41,7 @@ const InstructorLogin = () => {
           placeholder="Enter password"
           required={true}
         />
-        <button id="customer-login" type="submit">
-          Login
-        </button>
+        <button id="customer-login" type="submit">Login</button>
       </form>
     </div>
   );

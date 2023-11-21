@@ -8,9 +8,6 @@ interface lessonsClientview {
 }
 
 const LessonList: React.FC<lessonsClientview> = ({ lessons, setLessons, isClientView }) => {
-
-
-
   return (
     <div className="lesson-list">
       {lessons.length ? (

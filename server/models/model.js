@@ -48,19 +48,19 @@ const lessonSchema = new Schema({
 const Lesson = mongoose.model("Lesson", lessonSchema);
 
 const ratingSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-        },
-    score: {
-            type: Number,
-            required: true
-            },
-    comment: {
-      type: String,
-      required: true
-      },
-        });
+  name: {
+    type: String,
+    required: true
+  },
+  score: {
+    type: Number,
+    required: true
+  },
+  comment: {
+    type: String,
+    required: true
+  },
+});
 
 const Rating = mongoose.model('Rating', ratingSchema);
 

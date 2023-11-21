@@ -17,15 +17,15 @@ const AddLesson = () => {
     date: '',
     lessons: [],
     weather: [],
-    email:'',
+    email: '',
   })
 
 
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => { // solo podrá recibir cosas de HTMLInputElement y HTMLTextAreaElement (input normal o text area input)
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setInputValues({
       ...inputValues,
-      [e.target.name]: e.target.value //e.target.name coge el name del input
+      [e.target.name]: e.target.value
 
     })
     console.log(inputValues);
@@ -39,14 +39,12 @@ const AddLesson = () => {
     });
     if (selectedResort) {
       try {
-        console.log('SELECTED RESORT: ', selectedResort)
         const weatherData = await getWeather(selectedResort);
         setInputValues({
           ...inputValues,
           weather: weatherData.list,
           resort: selectedResort
         });
-        console.log('AFTER TRY HANDLE RESORT CHANGE', inputValues)
       } catch (err) {
         console.log(err);
       }
@@ -63,12 +61,10 @@ const AddLesson = () => {
     }
 
     postLessons(lessonObj).then((newLesson) => {
-      console.log(newLesson)
       setInputValues({
         ...inputValues,
         lessons: newLesson,
       })
-      //setLessons((prev) => [...prev, newLesson]);
       toast.success("Lesson request successful!", {
         position: "top-right",
         autoClose: 2000,
@@ -78,13 +74,8 @@ const AddLesson = () => {
         draggable: true,
         progress: undefined,
       });
-      console.log(inputValues)
-      console.log(newLesson)
     });
   }
-
-
-
 
   return (
     <>
@@ -150,7 +141,6 @@ const AddLesson = () => {
         </div>
         <input type="submit" value="Submit" />
       </form>
-      {/* <WeatherDisplay weather={weather} /> */}
     </>
   );
 };

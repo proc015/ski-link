@@ -13,7 +13,7 @@ exports.getLessons = async (req, res) => {
 
 exports.postLessons = async (req, res) => {
   try {
-    const newLesson = req.body;    
+    const newLesson = req.body;
     const createdLesson = await Lesson.create(newLesson);
     res.status(201);
     res.json(createdLesson);

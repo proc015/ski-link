@@ -1,8 +1,5 @@
 const { Lesson } = require("../models/model");
 
-
-const hardcodeUserName = "john";
-
 exports.getClientLessons = async (req, res) => {
   try {
     const email = req.params.email;

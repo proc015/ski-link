@@ -1,5 +1,4 @@
 // import { API_KEY } from './config/apikey'
-// console.log(API_KEY)
 
 const url = "http://localhost:3000";
 
@@ -36,8 +35,6 @@ async function postLessons(lessonObj) {
       },
       body: JSON.stringify(lessonObj),
     });
-
-    console.log('llego 40')
     const response = await data.json();
     return response;
   } catch (err) {
@@ -157,7 +154,8 @@ const coordinates = {
 
 async function getWeather(resortName) {
 
-  const apiKey = '40898e103b782906f8b97d0274477058';
+  const apiKey = process.env.REACT_APP_API_KEY;
+  console.log(apiKey)
 
   if (!coordinates[resortName]) {
     throw new Error(`No coordinates found for resort: ${resortName}`);

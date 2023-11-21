@@ -10,18 +10,12 @@ interface FormState {
 }
 
 const AddReview = () => {
-  // const [name, setName] = useState("");
-  // const [score, setScore] = useState(0);
-  // const [comment, setComment] = useState("");
-  // const [reviews, setReviews] = useState("");
-
   const [inputValues, setInputValues] = useState<FormState['inputValues']>({
     name: '',
     score: 0,
     comment: '',
     reviews: ''
   })
-
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setInputValues({
@@ -41,11 +35,6 @@ const AddReview = () => {
     e.preventDefault();
 
     postReviews(reviewObj).then((newReview) => {
-      // setInputValues({
-      //   ...inputValues,
-      //   reviews: newReview
-      // })
-
       setInputValues({
         name: '',
         score: 0,
@@ -76,7 +65,6 @@ const AddReview = () => {
   return (
     <>
       <ToastContainer />
-
       <form onSubmit={handleSubmit} className="rating-form-container">
         <div className="rating-form-control">
           <label>
@@ -96,12 +84,9 @@ const AddReview = () => {
         <div className="rating-form-control">
           <label>
             Rating:
-            < StarRating rating={inputValues.score} setRating={setRating}
-
-            />
+            < StarRating rating={inputValues.score} setRating={setRating} />
           </label>
         </div>
-
         <div className="rating-form-control">
           <label>
             Comments:
@@ -116,7 +101,6 @@ const AddReview = () => {
           </label>
         </div>
         <input id="reviewSubmit" type="submit" value="Submit" />
-
       </form>
     </>
   );

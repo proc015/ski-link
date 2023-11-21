@@ -30,7 +30,6 @@ const ReviewList = () => {
           <Reviews review={review} interactive={false} />
         </SwiperSlide>
       ))}
-
     </Swiper>
   );
 };
