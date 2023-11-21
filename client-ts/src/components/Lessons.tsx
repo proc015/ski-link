@@ -36,6 +36,8 @@ const Lessons: React.FC<LessonProps> = ({ lesson, setLessons, isClientView }) =>
     });
   }
 
+  if (lesson.status === "ACCEPTED") return null;
+
   return (
     <div className="Lesson">
       <div className="lesson-text-container">
