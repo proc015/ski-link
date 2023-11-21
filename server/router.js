@@ -10,11 +10,13 @@ const ratingController = require('./controllers/rating')
 
 router.post("/login/", loginsController.postLogin);
 
-router.post("/instructor", loginsController.postInstructorLogin);
+router.post("/instructor_login", loginsController.instructorLogin);
 
 //routes: register
 
 router.post('/register', loginsController.registerUser);
+router.post('/register_instructor', loginsController.registerInstructor);
+
 
 // routes: client dashboard 
 

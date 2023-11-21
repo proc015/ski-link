@@ -77,4 +77,21 @@ const usersSchema = new mongoose.Schema({
 const User = mongoose.model('User', usersSchema)
 
 
-module.exports = { Lesson, Rating, User };
+const instructorsSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  acceptedLessons: {
+    type: [String],
+    required: false,
+  }
+})
+const Instructor = mongoose.model('Instructor', instructorsSchema)
+
+
+module.exports = { Lesson, Rating, User, Instructor };
