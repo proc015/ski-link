@@ -14,6 +14,7 @@ const InstructorLogin = () => {
     const response = await postInstructorLogin(instructorObj);
 
     if (response.message) {
+      localStorage.setItem('instructor_email', email)
       navigate("/dashboard");
     } else {
       alert("login failed");
