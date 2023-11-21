@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { postInstructorLogin } from "../apiService";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import logo from "../images/SkiLink_logo.png";
 
 const InstructorLogin = () => {
@@ -41,7 +41,11 @@ const InstructorLogin = () => {
           placeholder="Enter password"
           required={true}
         />
-        <button id="customer-login" type="submit">Login</button>
+        <button className="customer-login" type="submit">Login</button>
+        <Link className="register-btn" to="/register_instructor">
+          <button className="register-inner-btn" type="submit">Register</button>
+        </Link>
+        {/* <button id="customer-login" type="submit">Login</button> */}
       </form>
     </div>
   );

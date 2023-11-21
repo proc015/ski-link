@@ -90,7 +90,7 @@ async function postRegister(loginObj) {
 
 async function postInstructorLogin(instructorObj) {
   try {
-    const data = await fetch(`${url}/instructor`, {
+    const data = await fetch(`${url}/instructor_login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -99,6 +99,29 @@ async function postInstructorLogin(instructorObj) {
     });
     const response = await data.json();
     return response;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function postRegisterInstructor(loginObj) {
+  try {
+    const data = await fetch(`${url}/register_instructor`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginObj),
+    });
+
+    if (!data.ok) {
+      console.log(`Error: ${data.status} - ${data.statusText}}`)
+    }
+
+    else {
+      const response = await data.json();
+      return response;
+    }
   } catch (err) {
     console.log(err);
   }
@@ -219,4 +242,5 @@ module.exports = {
   getReviews,
   postReviews,
   postRegister,
+  postRegisterInstructor
 };
