@@ -53,8 +53,8 @@ const Lesson = ({ lesson, setLessons, isClientView }) => {
         {!isClientView && isActionable && (
           <>
             <button id="accept" onClick={handleAccept}>
-              {" "}
-              Accept{" "}
+              
+              Accept
             </button>
             <button id="reject" onClick={handleReject}>
               {" "}
