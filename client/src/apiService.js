@@ -1,5 +1,3 @@
-// import { API_KEY } from './config/apikey'
-// console.log(API_KEY)
 
 const url = "http://localhost:3000";
 
@@ -7,7 +5,7 @@ async function getLessons() {
   try {
     const data = await fetch(`${url}/lessons`);
     const response = await data.json();
-    console.log("getLessons data:", response);
+    // console.log("getLessons data:", response);
     return response;
   } catch (err) {
     console.log(err);
@@ -18,7 +16,7 @@ async function getClientLessons(userName) {
   try {
     const data = await fetch(`${url}/lessons/${userName}`);
     const response = await data.json();
-    console.log("getClientLessons data:", response);
+    // console.log("getClientLessons data:", response);
     return response;
   } catch (err) {
     console.log(err);
@@ -139,7 +137,7 @@ async function getWeather (resortName) {
       throw new Error("Network response was not ok");
     }
     const res = await response.json();
-    console.log("getWeather data:", res);
+    // console.log("getWeather data:", res);
     return res;
   } catch (err) {
     console.error("Error fetching weather data:", err);
@@ -152,7 +150,7 @@ async function getReviews() {
   try {
     const data = await fetch(`${url}/reviews`);
     const response = await data.json();
-    console.log("getReviews data:", response);
+    // console.log("getReviews data:", response);
     return response;
   } catch (err) {
     console.log(err);

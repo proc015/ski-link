@@ -14,7 +14,7 @@ const InstructorLogin = () => {
     const response = await postInstructorLogin(instructorObj);
 
     if (response.message) {
-      console.log(response.message);
+      // console.log(response.message);
       navigate("/dashboard");
     } else {
       alert("login failed");
