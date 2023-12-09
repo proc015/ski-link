@@ -33,8 +33,8 @@ npm start
 ## Built with
 
 * [React](https://react.dev) - Front end library for building user interfaces
-* [React Navigation](https://reactnavigation.org) - Routing and *navigation* for *React* Native apps
 * [Express](https://expressjs.com) - Node.js web application framework for web and mobile apps 
+* [MongoDB](https://www.mongodb.com/) - Scalable Database Solution for Modern Web and Mobile Applications 
 
 
 ## Author
