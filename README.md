@@ -34,7 +34,7 @@ npm start
 
 * [React](https://react.dev) - Front end library for building user interfaces
 * [Express](https://expressjs.com) - Node.js web application framework for web and mobile apps 
-* [MongoDB](https://www.mongodb.com/) - Scalable Database Solution for Modern Web and Mobile Applications 
+* [MongoDB](https://www.mongodb.com/) - Scalable database solution for modern web and mobile apps 
 
 
 ## Author
