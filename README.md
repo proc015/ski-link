@@ -39,4 +39,4 @@ npm start
 
 ## Author
 
-Ryan Procaccini - [Github](https://github.com/proc015) - [LinkedIn](https://www.linkedin.com/in/ryan-procaccini-a4295647/)
+Ryan Procaccini - [Github](https://github.com/proc015) - [LinkedIn](https://www.linkedin.com/in/proc015/)
